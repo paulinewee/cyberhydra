@@ -60,6 +60,18 @@ export async function POST(request: Request) {
     return NextResponse.json(dummyAnalysis)
   }
 
+  // Validate onboarding data has all required fields
+  if (!onboardingData?.company?.industry ||
+      !onboardingData?.company?.size ||
+      !onboardingData?.company?.website ||
+      !onboardingData?.contacts ||
+      !onboardingData?.security?.hasMeasures ||
+      !onboardingData?.security?.hadIncidents ||
+      !onboardingData?.security?.topConcern) {
+    return NextResponse.json(dummyAnalysis)
+  }
+
+  
   const prompt = `
     You are a cybersecurity expert specializing in protecting startups and high-growth companies.
     
