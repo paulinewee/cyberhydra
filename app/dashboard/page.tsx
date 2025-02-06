@@ -209,12 +209,12 @@ CEO Office
             </TabsList>
 
             {/* Add spacing between tabs and content */}
-            <div className="mt-12">
+            <div className="mt-0">
               <TabsContent value="detect">
-                <div className="space-y-24">
+                <div className="space-y-6">
                   {/* AI-Generated Insights Section */}
                   <div>
-                    <div className="flex items-center gap-6 mt-12 mb-6">
+                    <div className="flex items-center gap-6 mt-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <Activity className="h-5 w-5 text-[#004DDD]" />
                       </div>
@@ -227,29 +227,29 @@ CEO Office
                     </div>
                     {analysis ? (
                       <div className="space-y-6">
-                        <Card className="p-6">
-                          <CardHeader className="px-4">
-                            <CardTitle className="text-lg font-medium">Industry Risk Distribution</CardTitle>
-                            <CardDescription className="text-sm">Analysis of threats specific to your industry</CardDescription>
-                          </CardHeader>
-                          <CardContent className="p-4">
-                            <RiskDistributionChart 
-                              data={analysis.industrySpecificThreats}
-                            />
-                          </CardContent>
-                        </Card>
+                        {/* <Card className="p-6"> */}
+                          {/* <CardContent className=""> */}
+                            {/* <div className="mb-4">
+                              <h3 className="text-lg font-medium">Industry Risk Distribution</h3>
+                              <p className="text-sm text-gray-600">Analysis of threats specific to your industry</p>
+                            </div> */}
+                          <RiskDistributionChart 
+                            data={analysis.industrySpecificThreats}
+                          />
+                          {/* </CardContent> */}
+                        {/* </Card> */}
                         
-                        <Card className="p-6">
+                        {/* <Card className="p-6">
                           <CardHeader className="px-4">
                             <CardTitle className="text-lg font-medium">Security Gap Analysis</CardTitle>
                             <CardDescription className="text-sm">Current security posture assessment</CardDescription>
                           </CardHeader>
-                          <CardContent className="p-4">
+                          <CardContent className="p-4"> */}
                             <SecurityGapsChart 
                               data={analysis.securityGaps}
                             />
-                          </CardContent>
-                        </Card>
+                          {/* </CardContent> */}
+                        {/* </Card> */}
                       </div>
                     ) : (
                       <div className="flex items-center justify-center p-8 bg-white rounded-lg border border-gray-200">
@@ -259,14 +259,10 @@ CEO Office
                     )}
                   </div>
 
-                  <div>
-                    <div className="my-8">
-                      <div className="h-px bg-gray-200" />
-                    </div>
-                  </div>
-
                   {/* Standard Metrics Section */}
-                  <div className="pt-8">
+                  <div className="pt-6"></div>
+                  <div className="h-px bg-gray-200" />
+                  <div className="pt-6">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <BarChart3 className="h-5 w-5 text-[#004DDD]" />
@@ -323,14 +319,10 @@ CEO Office
                     </div>
                   </div>
 
-                  <div>
-                    <div className="my-8">
-                      <div className="h-px bg-gray-200" />
-                    </div>
-                  </div>
-
                   {/* Actions Section */}
-                  <div className="pt-8">
+                  <div className="pt-6"></div>
+                  <div className="h-px bg-gray-200" />
+                  <div className="pt-5">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <AlertCircle className="h-5 w-5 text-[#004DDD]" />
@@ -361,7 +353,7 @@ CEO Office
                         <CardHeader className="px-4">
                           <CardTitle className="text-lg font-medium">Security Compliance</CardTitle>
                           <CardDescription className="text-sm">
-                            Discover emerging regulatory and compliance requirements for your company
+                            Discover emerging regulatory and compliance requirements
                           </CardDescription>
                         </CardHeader>
                         <CardContent>
@@ -684,7 +676,7 @@ CEO Office
                     {/* Response Time Analysis */}
                     <Card className="p-4">
                       <CardHeader className="px-4">
-                        <CardTitle>Response Time Analysis</CardTitle>
+                        <CardTitle>Incident Response Time</CardTitle>
                         <CardDescription>Average time to detect and respond to incidents</CardDescription>
                       </CardHeader>
                       <CardContent className="p-4 h-[300px]">
@@ -695,8 +687,8 @@ CEO Office
                             <YAxis />
                             <Tooltip />
                             <Legend />
-                            <Line type="monotone" dataKey="threats" name="Detection Time" stroke="#8884d8" />
-                            <Line type="monotone" dataKey="vulnerabilities" name="Response Time" stroke="#82ca9d" />
+                            <Line type="monotone" dataKey="threats" name="Time to Identify (mean)" stroke="#8884d8" />
+                            <Line type="monotone" dataKey="vulnerabilities" name="Time to Contain (mean)" stroke="#82ca9d" />
                           </LineChart>
                         </ResponsiveContainer>
                       </CardContent>
@@ -742,7 +734,7 @@ CEO Office
                               <TableCell>In Progress</TableCell>
                               <TableCell className="text-red-500">Critical</TableCell>
                               <TableCell>
-                                <Button variant="destructive" size="sm">
+                                <Button variant="outline" size="sm">
                                   Contain
                                 </Button>
                               </TableCell>
@@ -831,10 +823,10 @@ CEO Office
               </TabsContent>
 
               <TabsContent value="prevent">
-                <div className="space-y-24">
+                <div className="space-y-6">
                   {/* AI-Generated Insights Section */}
                   <div>
-                    <div className="flex items-center gap-6 mt-12 mb-6">
+                    <div className="flex items-center gap-6 mt-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <Shield className="h-5 w-5 text-[#004DDD]" />
                       </div>
@@ -894,14 +886,10 @@ CEO Office
                     )}
                   </div>
 
-                  <div>
-                    <div className="my-8">
-                      <div className="h-px bg-gray-200" />
-                    </div>
-                  </div>
-
                   {/* Standard Metrics Section */}
-                  <div className="pt-8">
+                  <div className="pt-4"></div>
+                  <div className="h-px bg-gray-200" />
+                  <div className="pt-4">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <Lock className="h-5 w-5 text-[#004DDD]" />
@@ -1013,14 +1001,11 @@ CEO Office
                     </Card>
                   </div>
 
-                  <div>
-                    <div className="my-8">
-                      <div className="h-px bg-gray-200" />
-                    </div>
-                  </div>
 
                   {/* Actions Section */}
-                  <div className="pt-8">
+                  <div className="pt-4"></div>
+                  <div className="h-px bg-gray-200" />
+                  <div className="pt-6">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <Shield className="h-5 w-5 text-[#004DDD]" />
@@ -1080,10 +1065,10 @@ CEO Office
               </TabsContent>
 
               <TabsContent value="respond">
-                <div className="space-y-24">
+                <div className="space-y-6">
                   {/* AI-Generated Insights Section */}
                   <div>
-                    <div className="flex items-center gap-6 mt-12 mb-6">
+                    <div className="flex items-center gap-6 mt-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <AlertTriangle className="h-5 w-5 text-[#004DDD]" />
                       </div>
@@ -1099,7 +1084,7 @@ CEO Office
                         {/* Incident Response Metrics */}
                         <Card className="p-6">
                           <CardHeader className="px-4">
-                          <CardTitle className="text-lg font-medium">Response Time Analysis</CardTitle>
+                          <CardTitle className="text-lg font-medium">Incident Response Time</CardTitle>
                           <CardDescription>Average time to detect and respond to incidents</CardDescription>
                           </CardHeader>
                           <CardContent className="p-4 h-[300px]">
@@ -1110,8 +1095,8 @@ CEO Office
                                 <YAxis />
                                 <Tooltip />
                                 <Legend />
-                                <Line type="monotone" dataKey="threats" name="Detection Time" stroke="#8884d8" />
-                                <Line type="monotone" dataKey="vulnerabilities" name="Response Time" stroke="#82ca9d" />
+                                <Line type="monotone" dataKey="threats" name="Time to Identify (mean)" stroke="#8884d8" />
+                                <Line type="monotone" dataKey="vulnerabilities" name="Time to Contain (mean)" stroke="#82ca9d" />
                               </LineChart>
                             </ResponsiveContainer>
                           </CardContent>
@@ -1125,14 +1110,10 @@ CEO Office
                     )}
                   </div>
 
-                  <div>
-                    <div className="my-8">
-                      <div className="h-px bg-gray-200" />
-                    </div>
-                  </div>
-
                   {/* Standard Metrics Section */}
-                  <div className="pt-8">
+                  <div className="pt-4"></div>
+                  <div className="h-px bg-gray-200" />
+                  <div className="pt-4">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <Activity className="h-5 w-5 text-[#004DDD]" />
@@ -1170,7 +1151,7 @@ CEO Office
                               <TableCell>In Progress</TableCell>
                               <TableCell className="text-red-500">Critical</TableCell>
                               <TableCell>
-                                <Button variant="destructive" size="sm">
+                                <Button variant="outline" size="sm">
                                   Contain
                                 </Button>
                               </TableCell>
@@ -1192,14 +1173,10 @@ CEO Office
                     </Card>
                   </div>
 
-                  <div>
-                    <div className="my-8">
-                      <div className="h-px bg-gray-200" />
-                    </div>
-                  </div>
-
                   {/* Actions Section */}
-                  <div className="pt-8">
+                  <div className="pt-4"></div>
+                  <div className="h-px bg-gray-200" />
+                  <div className="pt-4">
                     <div className="flex items-center gap-6 mb-6">
                       <div className="h-12 w-12 rounded-full bg-blue-50 flex items-center justify-center">
                         <AlertCircle className="h-5 w-5 text-[#004DDD]" />
