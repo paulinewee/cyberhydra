@@ -60,6 +60,9 @@ export async function POST(request: Request) {
     return NextResponse.json(dummyAnalysis)
   }
 
+  if (!onboardingData || Object.keys(onboardingData).length === 0) {
+    return NextResponse.json(dummyAnalysis)
+  }
   
   const prompt = `
     You are a cybersecurity expert specializing in protecting startups and high-growth companies.
