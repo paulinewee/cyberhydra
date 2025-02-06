@@ -227,17 +227,17 @@ CEO Office
                     </div>
                     {analysis ? (
                       <div className="space-y-6">
-                          <Card className="p-6">
-                            <CardHeader className="px-4">
-                              <CardTitle className="text-lg font-medium">Industry Risk Distribution</CardTitle>
-                              <CardDescription className="text-sm">Analysis of threats specific to your industry</CardDescription>
-                            </CardHeader>
-                            <CardContent className="p-4">
-                              <RiskDistributionChart 
-                                data={analysis.industrySpecificThreats}
-                              />
-                            </CardContent>
-                          </Card>
+                        <Card className="p-6">
+                          <CardHeader className="px-4">
+                            <CardTitle className="text-lg font-medium">Industry Risk Distribution</CardTitle>
+                            <CardDescription className="text-sm">Analysis of threats specific to your industry</CardDescription>
+                          </CardHeader>
+                          <CardContent className="p-4">
+                            <RiskDistributionChart 
+                              data={analysis.industrySpecificThreats}
+                            />
+                          </CardContent>
+                        </Card>
                         
                         <Card className="p-6">
                           <CardHeader className="px-4">
