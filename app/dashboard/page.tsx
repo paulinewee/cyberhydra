@@ -840,7 +840,7 @@ CEO Office
                     {analysis ? (
                       <div className="space-y-6">
                         <EmailBreachCheck 
-                          emails={onboardingData ? [
+                          emails={onboardingData && onboardingData.contacts ? [
                             onboardingData.contacts.primary.email,
                             ...onboardingData.contacts.additional.map((c: any) => c.email)
                           ] : []}
