@@ -221,23 +221,23 @@ CEO Office
                       <div>
                         <h2 className="text-2xl font-semibold mb-2">Threat Detection Insights</h2>
                         <p className="text-gray-600 text-sm">
-                          AI-powered analysis of potential threats to your startup
+                          AI-powered analysis of potential threats to your company
                         </p>
                       </div>
                     </div>
                     {analysis ? (
                       <div className="space-y-6">
-                        <Card className="p-6">
-                          <CardHeader className="px-4">
-                            <CardTitle className="text-lg font-medium">Industry Risk Distribution</CardTitle>
-                            <CardDescription className="text-sm">Analysis of threats specific to your industry</CardDescription>
-                          </CardHeader>
-                          <CardContent className="p-4">
-                            <RiskDistributionChart 
-                              data={analysis.industrySpecificThreats}
-                            />
-                          </CardContent>
-                        </Card>
+                          <Card className="p-6">
+                            <CardHeader className="px-4">
+                              <CardTitle className="text-lg font-medium">Industry Risk Distribution</CardTitle>
+                              <CardDescription className="text-sm">Analysis of threats specific to your industry</CardDescription>
+                            </CardHeader>
+                            <CardContent className="p-4">
+                              <RiskDistributionChart 
+                                data={analysis.industrySpecificThreats}
+                              />
+                            </CardContent>
+                          </Card>
                         
                         <Card className="p-6">
                           <CardHeader className="px-4">
@@ -359,9 +359,9 @@ CEO Office
 
                       <Card className="p-6">
                         <CardHeader className="px-4">
-                          <CardTitle className="text-lg font-medium">Threat Intelligence</CardTitle>
+                          <CardTitle className="text-lg font-medium">Security Compliance</CardTitle>
                           <CardDescription className="text-sm">
-                            Get latest threat intelligence for your industry
+                            Discover emerging regulatory and compliance requirements for your company
                           </CardDescription>
                         </CardHeader>
                         <CardContent>
@@ -534,7 +534,7 @@ CEO Office
                       {/* Response Time Analysis */}
                       <Card className="p-4">
                         <CardHeader className="px-4">
-                          <CardTitle>Response Time Analysis</CardTitle>
+                          <CardTitle>Incident Response Time</CardTitle>
                           <CardDescription>Average time to detect and respond to incidents</CardDescription>
                         </CardHeader>
                         <CardContent className="p-4 h-[300px]">
@@ -545,10 +545,14 @@ CEO Office
                               <YAxis />
                               <Tooltip />
                               <Legend />
-                              <Line type="monotone" dataKey="threats" name="Detection Time" stroke="#8884d8" />
-                              <Line type="monotone" dataKey="vulnerabilities" name="Response Time" stroke="#82ca9d" />
+                              <Line type="monotone" dataKey="threats" name="Time to Identify (mean)" stroke="#8884d8" />
+                              <Line type="monotone" dataKey="vulnerabilities" name="Time to Contain (mean)" stroke="#82ca9d" />
                             </LineChart>
                           </ResponsiveContainer>
+                          <div className="mt-4 text-center text-gray-600">
+                            Estimated Cost Savings: Minimizing time to respond has saved you{' '}
+                            <span className="text-[#004DDD] font-bold text-xl">75,000 AED</span>
+                          </div>
                         </CardContent>
                       </Card>
 
@@ -1255,6 +1259,16 @@ CEO Office
               </TabsContent>
             </div>
           </Tabs>
+        </div>
+      </div>
+
+      {/* Cost Savings Banner */}
+      <div className="w-full bg-blue-50 py-4 mt-8">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-gray-800">
+            Estimated Cost Savings: Minimizing time to respond has saved you{' '}
+            <span className="text-[#004DDD] font-bold text-xl">125,000 AED</span>
+          </p>
         </div>
       </div>
 
