@@ -41,7 +41,7 @@ export const RiskDistributionChart = memo(function RiskDistributionChart({ data 
                   />
                 ))}
               </Pie>
-              <Tooltip />
+              <Tooltip formatter={(value: number) => `${value}k`} />
             </PieChart>
           </ResponsiveContainer>
           
