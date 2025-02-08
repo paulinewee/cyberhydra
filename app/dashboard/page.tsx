@@ -269,19 +269,11 @@ CEO Office
                       </div>
                       <p className="text-sm text-red-600">Estimated annual revenue at risk</p>
                     </div>
+                   
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <div className="text-2xl font-bold text-blue-700 mb-1">87%</div>
-                    <div className="text-sm text-gray-600">Risk Score</div>
-                  </div>
-                  <div className="p-4 bg-green-50 rounded-lg">
-                    <div className="text-2xl font-bold text-green-700 mb-1">92%</div>
-                    <div className="text-sm text-gray-600">AI Defense</div>
-                  </div>
-                </div>
+               
 
                 <div className="space-y-2">
                   <h4 className="font-medium">Key Risk Factors</h4>
