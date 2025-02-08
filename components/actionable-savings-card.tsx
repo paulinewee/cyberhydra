@@ -107,8 +107,8 @@ export function ActionableSavingsCard() {
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="inline-flex bg-emerald-700 text-white px-4 py-2 rounded-full text-sm font-medium border border-green-200">
-                  Save: AED {(action.savings / 12).toLocaleString()} monthly
+              <div className="inline-flex bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium border border-green-200">
+              Save: AED {(action.savings / 12).toLocaleString()} monthly
                 </div>
                 <span className="text-sm text-gray-500">
                   through {

@@ -269,16 +269,6 @@ CEO Office
                       </div>
                       <p className="text-sm text-red-600">Estimated annual revenue at risk</p>
                     </div>
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                      <div className="p-2 bg-red-100 rounded">
-                        <div className="font-semibold text-red-900">32%</div>
-                        <div className="text-red-700">From AI threats</div>
-                      </div>
-                      <div className="p-2 bg-red-100 rounded">
-                        <div className="font-semibold text-red-900">24%</div>
-                        <div className="text-red-700">From data breaches</div>
-                      </div>
-                    </div>
                   </div>
                 </div>
                 
