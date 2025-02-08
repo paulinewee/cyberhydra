@@ -9,37 +9,69 @@ export async function POST(request: Request) {
   const onboardingData = await request.json()
 
   const prompt = `
-    Based on this company's profile and email addresses:
+    You are a cybersecurity expert specializing in protecting startups and high-growth companies.
+    
+    Analyze this startup's security needs based on their profile:
+    - Company Name: ${onboardingData.company.name}
     - Industry: ${onboardingData.company.industry}
-    - Size: ${onboardingData.company.size}
+    - Company Size: ${onboardingData.company.size}
+    - Description: ${onboardingData.company.description}
     - Website: ${onboardingData.company.website}
-    - Emails: ${JSON.stringify(onboardingData.contacts)}
-    - Current Security: ${onboardingData.security.hasMeasures}
+    - Current Security Measures: ${onboardingData.security.hasMeasures}
     - Past Incidents: ${onboardingData.security.hadIncidents}
-    - Main Concern: ${onboardingData.security.topConcern}
+    - Primary Concern: ${onboardingData.security.topConcern}
 
-    Generate a security analysis including:
-    1. Industry-specific threats
-    2. Critical security gaps
-    3. Simulated email breach check results
-    4. Recommended actions
+    Consider startup-specific factors like:
+    1. Rapid growth and scaling challenges
+    2. Limited security resources and budget
+    3. Protecting intellectual property
+    4. Securing investor relationships and data
+    5. Common startup industry threats
+    6. Remote/hybrid workforce security
+    7. Cloud infrastructure vulnerabilities
+    8. Compliance requirements for startups in ${onboardingData.company.industry}
 
-    For the email breach check, simulate checking against known data breaches
-    and provide realistic but synthetic breach details.
+    Generate a startup-focused security analysis including:
+    1. Industry-specific threats that commonly target startups in this space
+    2. Critical security gaps that could impact growth/funding
+    3. Cost-effective security recommendations
+    4. Email security analysis for the founding team
+    5. Startup-appropriate security metrics
 
     Return the data in this JSON format:
     {
       "industrySpecificThreats": [
         {
-          "name": string,  // Specific threat name
-          "value": number, // Risk score (0-100)
-          "description": string, // Brief description of the threat
-          "trend": "increasing" | "stable" | "decreasing"
+          "name": string,
+          "value": number,
+          "description": string,
+          "trend": string,
+          "startupImpact": string // Specific impact on startups
         }
       ],
-      "securityGaps": [{"gap": string, "impact": number}],
-      "emailBreachResults": [{"email": string, "breached": boolean, "breachDetails": string}],
-      "recommendedActions": [{"action": string, "priority": "high"|"medium"|"low"}]
+      "securityGaps": [
+        {
+          "gap": string,
+          "impact": number,
+          "growthRisk": string // How it could affect startup growth
+        }
+      ],
+      "emailBreachResults": [
+        {
+          "email": string,
+          "breached": boolean,
+          "breachDetails": string,
+          "startupRisks": string // Startup-specific risks if breached
+        }
+      ],
+      "recommendedActions": [
+        {
+          "action": string,
+          "priority": "high"|"medium"|"low",
+          "cost": "low"|"medium"|"high",
+          "scalability": string // How it scales with startup growth
+        }
+      ]
     }
   `
 

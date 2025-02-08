@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from "@/components/ui/table"
 import { generateRandomData, generateRandomPieData } from "@/lib/utils"
-import { Loader2, Shield, AlertTriangle, ArrowRight, Activity, Lock, Mail, BarChart3, Rocket, GraduationCap, Target, BookOpen, AlertCircle } from "lucide-react"
+import { Loader2, Shield, AlertTriangle, ArrowRight, Activity, Lock, Mail, BarChart3, Rocket, GraduationCap, Target, BookOpen, AlertCircle, BadgeCheck, TrendingDown } from "lucide-react"
 import { 
   LineChart, 
   Line, 
@@ -549,6 +549,32 @@ CEO Office
                               <Line type="monotone" dataKey="vulnerabilities" name="Response Time" stroke="#82ca9d" />
                             </LineChart>
                           </ResponsiveContainer>
+                        </CardContent>
+                      </Card>
+
+                      {/* After Response Time Analysis chart */}
+                      <Card className="p-6 bg-gradient-to-br from-green-50 to-white border-green-100">
+                        <CardHeader className="px-4">
+                          <div className="flex items-center gap-2">
+                            <CardTitle className="text-lg font-medium text-green-800">Estimated Cost Savings</CardTitle>
+                            <BadgeCheck className="h-5 w-5 text-green-600" />
+                          </div>
+                          <CardDescription className="text-sm text-green-700">
+                            Impact of improved incident response time
+                          </CardDescription>
+                        </CardHeader>
+                        <CardContent className="p-4">
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-1">
+                              <p className="text-2xl font-semibold text-green-800">125,000 AED</p>
+                              <p className="text-sm text-green-700">
+                                Saved through minimizing time to respond
+                              </p>
+                            </div>
+                            <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center">
+                              <TrendingDown className="h-6 w-6 text-green-600" />
+                            </div>
+                          </div>
                         </CardContent>
                       </Card>
                     </div>
